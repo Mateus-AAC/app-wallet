@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
     View,
@@ -11,9 +11,11 @@ import * as Animatable from 'react-native-animatable';
 
 import { useNavigation } from "@react-navigation/native";
 
-import { styles } from './styles';
+import { styles } from '../Registrar/styles';
 
 export default function Register() {
+    const [text, setText] = useState('');
+
     const navigation = useNavigation();
 
     return (
@@ -27,6 +29,8 @@ export default function Register() {
                 <TextInput
                     placeholder="Digite aqui"
                     style={styles.input}
+                    onChangeText={newText => setText(newText)}
+                    defaultValue={text}
                 />
 
                 <TouchableOpacity

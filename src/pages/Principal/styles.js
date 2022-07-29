@@ -40,25 +40,18 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         margin: '20px'
     },
-    nome: {
+    cvv: {
         fontSize: '15px',
         alignItems: 'center',
         color: 'black',
         marginTop: '20px',
         marginLeft: '20px'
     },
-    cvv: {
-        fontSize: '15px',
-        alignItems: 'center',
-        color: 'black',
-        marginTop: '30px',
-        marginLeft: '20px'
-    },
     simbolo: {
         fontSize: '30px',
         alignItems: 'center',
         color: 'black',
-        marginLeft: '25px'
+        marginLeft: '130px'
     },
     Textcartao: {
         fontSize: '20px',

@@ -12,7 +12,8 @@ import { useNavigation } from "@react-navigation/native";
 
 import { styles } from '../Extratos/styles';
 
-export default function Register() {
+export default function Extratos() {
+    
     const navigation = useNavigation();
 
     return (

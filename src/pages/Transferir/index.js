@@ -13,7 +13,8 @@ import { useNavigation } from "@react-navigation/native";
 
 import { styles } from '../Transferir/styles';
 
-export default function Register() {
+export default function Transferir() {
+    
     const navigation = useNavigation();
 
     return (

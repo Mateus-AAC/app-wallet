@@ -8,27 +8,13 @@ import {
 
 import * as Animatable from 'react-native-animatable';
 
-import { api } from "../../services/api";
+import { styles } from '../Principal/styles';
 
 import { useNavigation } from "@react-navigation/native";
 
-import { styles } from '../Principal/styles';
+import { dadosRefinados, gerenciar } from "../../controller/happycontroller";
 
-export default function Register() {
-    async function handlebars() {
-        await api.get('/search?id=712828104040513607', {
-
-        }).then((response) => {
-            console.log(response);
-        })
-    }
-    //await api.post('/path-depos-de-bank', {
-    //    type: feedbackType,
-    //    comment,
-    //    screenshot
-    //  }).then((response) => {
-    //    console.log(response);
-    // })
+export default function Principal() {
 
     const navigation = useNavigation();
 
@@ -37,13 +23,13 @@ export default function Register() {
             <Animatable.View animation='fadeInDown' style={styles.containerLogo}>
                 <View style={styles.saldocartao}>
                     <Text style={styles.cartao}>𝐻𝒶𝓅𝓅𝓎 𝓈𝓊𝑔𝒶𝓇 𝒸𝒶𝓇𝒹</Text>
-                    <Text style={styles.Textcartao}>9999 9999 9999 9999</Text>
-                    <Text style={styles.nome}>UNDEFINED<Text style={styles.cvv}>CVV:<Text style={styles.cvv}>999</Text><Text style={styles.simbolo}> 🍬</Text></Text></Text>
+                    <Text style={styles.Textcartao}>{dadosRefinados[1]}</Text>
+                    <Text style={styles.cvv}>CVV:<Text style={styles.cvv}>{dadosRefinados[2]}</Text><Text style={styles.simbolo}> 🍬</Text></Text>
                 </View>
 
                 <View style={styles.saldo}>
                     <Text style={styles.TextTitulo}>Saldo Disponivel</Text>
-                    <Text style={styles.Text}>R$< Text style={styles.Text}>999,99</Text></Text>
+                    <Text style={styles.Text}>R$< Text style={styles.Text}>{dadosRefinados[3]}</Text></Text>
                 </View>
             </Animatable.View>
 
@@ -52,7 +38,7 @@ export default function Register() {
                     style={styles.button}
                     onPress={() => navigation.navigate('Transferir')}
                 >
-                    <Text style={styles.buttonText} onPress={() => handlebars()}>Transferir</Text>
+                    <Text style={styles.buttonText}>Transferir</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={styles.button}
@@ -60,8 +46,9 @@ export default function Register() {
                 >
                     <Text style={styles.buttonText}>Extrato</Text>
                 </TouchableOpacity>
-
             </Animatable.View>
         </View >
     );
 }
+
+gerenciar.pegarDados();

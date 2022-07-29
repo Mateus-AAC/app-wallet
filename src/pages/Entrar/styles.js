@@ -39,10 +39,10 @@ export const styles = StyleSheet.create({
         marginTop: 28
     },
     input: {
+        marginTop: '10px',
         borderBottomWidth: 1,
-        height: 40,
-        marginBottom: 12,
-        fontSizer: 16
+        height: '40px',
+        marginBottom: 8
     },
     button: {
         backgroundColor: '#b050eb',
@@ -59,6 +59,6 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     RegisterText: {
-        marginTop: 15,
+        marginTop: 15
     }
 })

@@ -49,7 +49,7 @@ export const styles = StyleSheet.create({
         width: '100%',
         borderRadius: 15,
         paddingVertical: 8,
-        marginTop: 14,
+        marginTop: 15,
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -57,5 +57,8 @@ export const styles = StyleSheet.create({
         color: '#e9e7e1',
         fontSize: 18,
         fontWeight: 'bold'
+    },
+    RegisterText: {
+        marginTop: '25px',
     }
 })

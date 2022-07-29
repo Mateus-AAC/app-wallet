@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
     View,
@@ -11,9 +11,13 @@ import * as Animatable from 'react-native-animatable';
 
 import { useNavigation } from "@react-navigation/native";
 
-import { styles } from '../Registrar/styles';
+import { styles } from '../Entrar/styles';
 
-export default function SignIn() {
+export const loginIDS = [];
+
+export default function Entrar() {
+    const [text, setText] = useState('');
+
     const navigation = useNavigation();
 
     return (
@@ -27,13 +31,15 @@ export default function SignIn() {
                 <TextInput
                     placeholder="Digite aqui"
                     style={styles.input}
+                    nativeID='idvalor'
+                    onChangeText={newText => setText(newText)}
+                    defaultValue={text}
                 />
 
                 <TouchableOpacity
                     style={styles.button}
-                    onPress={() => navigation.navigate('Principal')}
                 >
-                    <Text style={styles.buttonText}>Acessar</Text>
+                    <Text style={styles.buttonText} onPress={() => navigation.navigate('Principal')}>Acessar</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
